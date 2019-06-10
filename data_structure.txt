@@ -1,0 +1,18 @@
+
+*USER
+-id
+-name
+-email
+-password_digest
+-status
+
+(has_many POST)
+
+
+==================
+
+* POST
+-id
+-message
+
+(belongs_to USER)
