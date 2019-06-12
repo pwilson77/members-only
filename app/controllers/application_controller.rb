@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    helper_method :current_user, :logged_in_user
+    
     def remember(user)
         user.remember
         cookies.permanent.signed[:user_id] = user.id
@@ -21,7 +23,9 @@ class ApplicationController < ActionController::Base
         user == current_user()
     end
 
-
+    def logged_in?
+      not current_user.nil?
+    end
 
     def current_user
         if (user_id = session[:user_id]) #its really an equal sign
@@ -46,5 +50,11 @@ class ApplicationController < ActionController::Base
         @current_user = nil
     end
 
-    helper_method :current_user
+    def logged_in_user
+        unless logged_in?
+          flash[:danger] = "Please log in."
+          redirect_to signin_url
+        end
+    end
+  
 end
