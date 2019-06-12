@@ -1,6 +1,10 @@
 <% provide(:title, 'Home') %>
 <div class="center jumbotron">
   <h1>Welcome to Members Only</h1>
-
+  
+    <% user = current_user()  %>
+    <% if user != nil %>           
+        Logged in as <b><%= user.name  %></b>
+    <% end %>
   
 </div>
