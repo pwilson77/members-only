@@ -1,24 +1,19 @@
-# README
+# Members Only
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Building an exclusive clubhouse where  members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
-Things you may want to cover:
+There's also an authentication system authentication system using SHA1 hashing function for password encryption.
 
-* Ruby version
+## DESCRIPTION
 
-* System dependencies
+There're 2 main models for the app's functionality
+- **User** : User data stored here
+- **Post** : Contains Posts of Users (a User can have multiple posts)
 
-* Configuration
+There's a SESSION_CONTROLLER to manage sessions. Many helper functions to assist the session controller file is found in the **application_controller** file
 
-* Database creation
 
-* Database initialization
+## Contributors
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Louis SHEY _https://github.com/shloch_
+- Fabien PHILIP _https://github.com/pwilson77_
