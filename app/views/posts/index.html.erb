@@ -1,0 +1,17 @@
+<% provide(:title, 'All Posts') %>
+<h1>All Posts</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @posts.each do |post| %>
+    <li>
+        <b> <%= post.title %> </b>
+        <%  if !current_user.nil? %>
+              ( by <u><%= post.user.name %></u>)
+        <% end %>
+        <p> <%= post.message %> </p>
+        
+    </li>
+  <% end %>
+</ul> 
