@@ -13,7 +13,7 @@ class PostsController < ApplicationController
         @post = current_user.posts.build(post_params) 
         if @post.save
           flash[:info] = "Post succesfully created"
-          redirect_to root_url
+          redirect_to posts_path
         else
           render 'new'
         end
